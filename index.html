@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="indah.css">
+	<title>SPA Menu</title>
+</head>
+<body>
+	<div class="container"> 
+		<nav class="wrapper">
+			<div class="nama">
+				<div class="nama1" onclick="document.location.href='index.html'">Indah Ratna Ningsih</div>
+			</div>
+				<ul class="navigation">
+				<li><a href="#home" class="active">Home</a></li>
+				<li><a href="#about" class="active">About</a></li>
+				<li><a href="#contact"  class="active">Contact</a></li>
+			</ul>
+		</nav>
+		<div id="konten">
+		<div id="isi">
+        <div id="home" class="isi_1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, impedit! Ullam mollitia dolorem accusamus! Cupiditate blanditiis fugit pariatur ipsam a omnis accusamus laborum reprehenderit ab! Consequatur tenetur aspernatur libero! Accusantium odit fugiat doloremque quo dignissimos ea voluptatem mollitia iure incidunt rem! A recusandae sapiente iure omnis sit id corporis quas, dolores ab sint error est?</div>
+        <div id="about" class="isi_2">
+            <img src="foto.jpeg">
+            <p>Hello, I'm Indah Ratna Ningsih!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo harum optio reprehenderit rem error? Odit, omnis non earum voluptatum autem officiis iste aliquid laboriosam nemo, natus velit pariatur vitae aspernatur!</p>
+        </div>
+        <div id="contact" class="isi_3">
+            <p>Silahkan Hubungi Kontak Ini!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, tenetur!</p>
+            <br>
+            <a href="https://wa.me/+6289617812783">Whatsapp</a>
+            <br>
+            <br>
+            <a href="https://instagram.com/indhrtna_">Instagram</a>
+        </div>
+      </div>
+      </div>
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+  var currentSection = 0;
+  $("#konten").hide();
+  $("li a").click(function () {
+    $("li a").removeClass("active");
+    $(this).addClass("active");
+
+    var href = $(this).attr("href");
+    $("#isi>div").hide();
+
+    $(href).show();
+
+    if (currentSection == 0) {
+      $("#konten").slideToggle(200);
+      currentSection = href;
+    } else if (currentSection == href) {
+      $("#konten").slideToggle(200);
+      currentSection = 0;
+    } else {
+      currentSection = href;
+    }
+    return false;
+  });
+});
+</script>
+
+</body>
+</html>
